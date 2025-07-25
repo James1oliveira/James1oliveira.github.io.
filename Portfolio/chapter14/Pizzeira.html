@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>pizzeria</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Pizzeira.css'>
+  
+</head>
+<body>
+
+    <!-- Main heading for the application -->
+<h1>Jamo's Pizzeria</h1>
+
+<!-- Container for the pizza order form -->
+<div id="orderForm">
+
+    <!-- Input: Number of pizzas -->
+    <label>How many pizzas do you want?
+        <input type="number" id="numPizzas" /> <!-- Numeric input for pizza quantity -->
+    </label>
+    <br /><br />
+
+    <!-- Dropdown: Type of pizza -->
+    <label>What kind of pizzas?
+        <select id="typePizza"> <!-- Pizza type selection -->
+            <option value="cheese">Cheese</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="supreme">Supreme</option> <!-- Supreme has an extra charge -->
+            <option value="Rib">Rib</option>
+            <option value="Hawaiian">Hawaiian</option>
+            <option value="Chicken Mayo">Chicken Mayo</option>
+        </select>
+    </label>
+    <br /><br />
+
+    <!-- Dropdown: Delivery city -->
+    <label>Where do you live?
+        <select id="deliveryCity"> <!-- City selection for delivery -->
+            <option value="Anytown">Anytown</option>
+            <option value="Sacramento">Sacramento</option>
+        <option value="Beverly Hills">Beverly Hills</option>
+        <option value="Long Beach">Long Beach</option>
+        <option value="Santa Monica">Santa Monica</option>
+        <option value="Burbank">Burbank</option>
+        </select>
+    </label>
+    <br /><br />
+
+    <!-- Dropdown: Is it the customer's birthday -->
+    <label>Is it your birthday?
+        <select id="birthday"> <!-- Determines if free delivery should apply -->
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </label>
+    <br /><br />
+
+    <!-- Button to submit the order and calculate total -->
+    <button type="button" id="placeOrder">Place Order</button>
+</div>
+
+<!-- Output area: Displays the order total and delivery info -->
+<div id="displayTotal"></div>
+
+
+<script src='Pizzeira.js'></script>
+</body>
+</html>
