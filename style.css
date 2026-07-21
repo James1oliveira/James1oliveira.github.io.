@@ -556,6 +556,21 @@ nav.scrolled {
 
 .project-link:hover { color: var(--gold); }
 
+.project-link-divider {
+  color: var(--navy-border);
+  font-size: 0.72rem;
+}
+
+.project-hint {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+  opacity: 0.55;
+  margin-top: 0.85rem;
+}
+
 .project-arrow {
   position: absolute;
   top: 2.5rem;
