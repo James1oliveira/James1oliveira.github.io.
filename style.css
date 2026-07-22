@@ -934,3 +934,206 @@ footer {
   .services-grid { grid-template-columns: 1fr; }
   .mini-projects-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   ADDITIONS — Recruiter-focused improvements
+   ============================================ */
+
+/* ── Hero quick-scan tech row ── */
+.hero-tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin: 0 0 2.5rem;
+}
+
+.hero-tech-item {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  opacity: 0.9;
+}
+
+/* ── Tech Stack section ── */
+.stack-groups {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.stack-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.stack-group .skills-grid {
+  grid-template-columns: 1fr;
+  margin-top: 0;
+}
+
+/* ── Availability badges (About) ── */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.badge-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--navy-border);
+  border-radius: 999px;
+  color: var(--slate);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.badge-pill:hover {
+  border-color: var(--gold-dim);
+  color: var(--white);
+}
+
+/* ── Project screenshot placeholder ── */
+.project-shot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1.75rem;
+  border-radius: 2px;
+  border: 1.5px dashed var(--navy-border);
+  background: linear-gradient(135deg, var(--navy-mid), rgba(240,244,248,0.03));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  opacity: 0.6;
+}
+
+/* To use a real screenshot on a given .project-card:
+   replace the .project-shot div with:
+   <img class="project-shot-img" src="images/your-screenshot.png" alt="..."> and add:
+   .project-shot-img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:2px; margin-bottom:1.75rem; } */
+
+.project-card.featured .project-shot {
+  aspect-ratio: 21 / 9;
+}
+
+/* ── Certifications & Education ── */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.credential-card {
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: 2px;
+  padding: 2.5rem;
+}
+
+.credential-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.credential-list li {
+  font-size: 0.95rem;
+  color: var(--white);
+  padding-left: 1.15rem;
+  position: relative;
+}
+
+.credential-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+.credential-status {
+  color: var(--slate);
+  font-size: 0.85em;
+}
+
+/* ── Responsive additions ── */
+@media (max-width: 1024px) {
+  .stack-groups { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .stack-groups { grid-template-columns: 1fr; }
+  .credentials-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Contact — clickable cards ── */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--navy-card);
+  border: 1px solid var(--navy-border);
+  border-radius: 2px;
+  padding: 1.75rem 1.5rem;
+  transition: var(--transition);
+}
+
+.contact-card:hover {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+
+.contact-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.contact-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: color var(--transition);
+}
+
+.contact-card:hover .contact-card-label { color: var(--gold); }
+
+.contact-card-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate);
+  opacity: 0.75;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .contact-cards { grid-template-columns: 1fr; }
+}
